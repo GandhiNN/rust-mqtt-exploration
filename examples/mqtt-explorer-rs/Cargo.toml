@@ -1,0 +1,29 @@
+[package]
+name = "mqtt-explorer-rs"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+path = "src/main.rs"
+name = "mqtt-explorer-rs"
+
+[dependencies]
+env_logger = { workspace = true }
+paho-mqtt = { workspace = true }
+serde_json = { workspace = true }
+async-std = { workspace = true }
+dotenv = { workspace = true }
+indicatif = { workspace = true }
+serde_yml = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+clap = {workspace = true, features = ["derive"] }
+tabled = { workspace = true }
+rand = { workspace = true }
+log = "0.4.27"
+
+[profile.release]
+strip = true        # Strip symbols from binary*
+opt-level = 'z'     # Optimize for size
+lto = true          # Enable link-time optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations
+panic = 'abort'     # Abort on panic
