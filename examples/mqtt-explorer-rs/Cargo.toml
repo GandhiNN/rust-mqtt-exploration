@@ -19,7 +19,7 @@ serde = { workspace = true, features = ["derive"] }
 clap = {workspace = true, features = ["derive"] }
 tabled = { workspace = true }
 rand = { workspace = true }
-log = "0.4.27"
+log = { workspace = true }
 
 [profile.release]
 strip = true        # Strip symbols from binary*
