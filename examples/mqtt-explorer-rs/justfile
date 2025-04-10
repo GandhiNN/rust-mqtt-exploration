@@ -142,7 +142,9 @@ profile-release:
     RUST_BACKTRACE=1 samply record target/profiling/{{binary}}
 
 # build release executable
-release: pre-release
+# release: pre-release
+#     cargo build --release && echo "Executable at target/release/{{binary}}"
+release: 
     cargo build --release && echo "Executable at target/release/{{binary}}"
 
 # build and run
