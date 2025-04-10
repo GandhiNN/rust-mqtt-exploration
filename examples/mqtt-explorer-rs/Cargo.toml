@@ -21,6 +21,9 @@ tabled = { workspace = true }
 rand = { workspace = true }
 log = { workspace = true }
 
+[target.x86_64-pc-windows-gnu.dependencies]
+paho-mqtt = { workspace = true, features=["vendored-ssl"] }
+
 [profile.release]
 strip = true        # Strip symbols from binary*
 opt-level = 'z'     # Optimize for size
